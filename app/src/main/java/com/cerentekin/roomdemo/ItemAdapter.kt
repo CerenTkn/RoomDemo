@@ -9,7 +9,7 @@ import com.cerentekin.roomdemo.databinding.ItemsRowBinding
 
 class ItemAdapter(private val items: ArrayList<EmployeeEntity>,
                   private val updateListener : (id:Int)->Unit,
-                  private val deleteListener : (id:Int)-> Unit
+                   private val deleteListener : (id:Int)-> Unit
 
                   ) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
@@ -37,7 +37,7 @@ class ItemAdapter(private val items: ArrayList<EmployeeEntity>,
             holder.llMain.setBackgroundColor(ContextCompat.getColor(holder.itemView.context,
             R.color.colorLightGray))
         }else{
-            holder.llMain.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite))
+            holder.llMain.setBackgroundColor(ContextCompat.getColor(context, R.color.white ))
         }
         holder.ivEdit.setOnClickListener {
             updateListener.invoke(item.id)
@@ -46,7 +46,6 @@ class ItemAdapter(private val items: ArrayList<EmployeeEntity>,
             deleteListener.invoke(item.id)
         }
     }
-
     override fun getItemCount(): Int {
         return items.size
     }
